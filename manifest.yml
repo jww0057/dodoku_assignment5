@@ -2,7 +2,7 @@ applications:
 - path: .
   memory: 256M
   instances: 1
-  name: aulogin-dsudoku 
-  host: aulogin-dsudoku
+  name: jww0057-dodoku 
+  host: jww0057-dodoku
   disk_quota: 1024M
   buildpack: python_buildpack  
