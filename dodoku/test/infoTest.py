@@ -5,5 +5,5 @@ class InfoTest(unittest.TestCase):
     def test_info_010_ShouldReturnMyUsername(self):
         expectedResult = {'info': 'jww0057'}
         parms = {'op': 'info'}
-        actualResult = info.info(parms)
+        actualResult = info._info(parms)
         self.assertDictEqual(expectedResult, actualResult)
