@@ -3,8 +3,11 @@ import random
 
 def _create(parms):
     result = {'grid', 'integrity', 'status'}
-    keys = list(parms.keys())
-    level = parms.get(keys[1])
+    level = ''
+    if 'level' not in parms or parms['level'] == '':
+        level = '1'
+    else:
+        level = parms['level']
 
     if level == '1' or level == '':
         result['grid'] = '[0,-2,0,0,-1,0,0,-4,0,-8,0,-1,-9,0,0,0,0,-5,0,0,0,0,-3,0,0,-1,0,0,-3,0,0,0,0,-4,0,-' \
