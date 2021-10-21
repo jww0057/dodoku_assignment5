@@ -1,3 +1,9 @@
 def _insert(parms):
-    result = {'status': 'insert stub'}
+    result = {'cell', 'value', 'grid', 'integrity', 'status'}
+    
+    
+    
+    
     return result
+
+    
