@@ -3,11 +3,14 @@ import random
 
 def _create(parms):
     result = {'grid': None, 'integrity': None, 'status': None}
-    level = ''
+    level = parms['level']
     if 'level' not in parms or parms['level'] == '':
         level = '1'
     else:
         level = parms['level']
+        
+    if level != '1' or level != '2' or level != '3':
+        return badStatus()
     
     if level == '1' or level == '':
         result['grid'] = [0,-2,0,0,-1,0,0,-4,0,-8,0,-1,-9,0,0,0,0,-5,0,0,0,0,-3,0,0,-1,0,0,-3,0,0,0,0,-4,0,-6,-5,0,-9,0,0,0,0,0,-7,0,0,0,0,0,0,-2,-8,0,-2,0,0,-6,0,0,0,0,0,0,-1,-4,0,-6,0,0,0,-6,0,0,-3,0,0,0,-2,0,0,-1,0,-9,0,-4,0,-5,-7,0,0,0,0,0,0,-7,0,0,-5,0,0,-6,0,0,0,0,-9,0,-2,0,0,0,0,0,-4,0,-8,-7,0,-9,0,0,0,0,0,0,0,-5,0,0,-9,0,0,0,0,-4,0,0,-6,0,-3,-9,0,0,0,-6,0,0,-5,0,0,-3,-1]
@@ -29,6 +32,9 @@ def _create(parms):
 
 def status():
     status = 'ok'
+    return status
+def badStatus():
+    status = 'error'
     return status
 
 def integrity1():
