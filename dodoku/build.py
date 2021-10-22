@@ -4,12 +4,12 @@ import random
 
 class Build:
     
-    def gridreturn(self, grid):
-        
-        return 
+    
     
     
     def gridbuilder(self, grid):
+        
+        
         gridlist = []
         index = 0
         rindex = 0
@@ -38,6 +38,10 @@ class Build:
                 index = index + 1
             gridlist.append(row)
         
+        
+        
+        
+        
         prehash = ""
         for cindex in range(0,15):
             for rindex in range(0,15):
@@ -50,7 +54,7 @@ class Build:
         myHashDigest = myHash.hexdigest()
         randomStart = random.randint(0, len(myHashDigest) - 8)
         rnghash = myHashDigest[randomStart:randomStart + 8]
-    
+        
         return rnghash
         
         

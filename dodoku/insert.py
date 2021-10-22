@@ -1,12 +1,16 @@
 from dodoku.build import Build
 
 def _insert(parms):
-    #result = {'cell', 'value', 'grid', 'integrity', 'status'}
+    result = {'grid': None, 'integrity': None, 'status': None}
     builder = Build()
     grid = parms.get('grid')
-    
-    
-    result = builder.gridbuilder(grid)
+    grid.replace('[', '')
+    grid.replace(']', '')
+    buildresult = builder.gridbuilder(grid)
+
+    result['grid'] = parms.get('grid')
+    result['integrity'] = buildresult
+    result['status'] = 'ok'
     return result
 
     
