@@ -1,5 +1,6 @@
 from unittest import TestCase
-import dodoku.insert as insert 
+import dodoku.insert as insert
+import dodoku.build as build
 
 class InsertTest(TestCase):
     

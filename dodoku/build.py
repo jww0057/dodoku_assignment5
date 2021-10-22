@@ -4,6 +4,11 @@ import random
 
 class Build:
     
+    def gridreturn(self, grid):
+        
+        return 
+    
+    
     def gridbuilder(self, grid):
         gridlist = []
         index = 0
@@ -32,4 +37,23 @@ class Build:
                 row.append(grid[index])
                 index = index + 1
             gridlist.append(row)
-            
+        
+        prehash = ""
+        for cindex in range(0,15):
+            for rindex in range(0,15):
+                if gridlist[rindex][cindex] != 'Invalid':
+                    prehash += str(gridlist[rindex][cindex])
+        
+        
+        myHash = hashlib.sha256()
+        myHash.update(prehash.encode())
+        myHashDigest = myHash.hexdigest()
+        randomStart = random.randint(0, len(myHashDigest) - 8)
+        rnghash = myHashDigest[randomStart:randomStart + 8]
+    
+        return rnghash
+        
+        
+        
+        
+        
