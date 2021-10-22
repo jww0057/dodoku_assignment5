@@ -34,13 +34,13 @@ def gridbuilder():
         gridlist.append(row)
 
     prehash = ""
-    for cindex in range(0,15):
+    for cindex in range(0,15): #working from top down to form the hash. 
         for rindex in range(0,15):
-            if gridlist[rindex][cindex] != 'Invalid':
+            if gridlist[rindex][cindex] != 'Invalid': #removing the invalid that represent the blank areas within the 15x15 area
                 prehash += str(gridlist[rindex][cindex])
     
     
-    myHash = hashlib.sha256()
+    myHash = hashlib.sha256() #given formula from assignment 4
     myHash.update(prehash.encode())
     myHashDigest = myHash.hexdigest()
     randomStart = random.randint(0, len(myHashDigest) - 8)

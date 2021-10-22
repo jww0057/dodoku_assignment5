@@ -4,8 +4,8 @@ def _insert(parms):
     result = {'grid': None, 'integrity': None, 'status': None}
     builder = Build()
     grid = parms.get('grid')
-    grid.replace('[', '')
-    grid.replace(']', '')
+    grid = grid.replace('[', '')
+    grid = grid.replace(']', '')
     buildresult = builder.gridbuilder(grid)
 
     result['grid'] = parms.get('grid')
